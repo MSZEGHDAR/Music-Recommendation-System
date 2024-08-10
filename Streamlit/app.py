@@ -4,12 +4,15 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from joblib import load
 import numpy as np
-from dotenv import load_dotenv
-import os
+# from dotenv import load_dotenv
+# import os
 
-load_dotenv()
-SPOTIFY_CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')
-SPOTIFY_CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')
+# load_dotenv()
+# SPOTIFY_CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')
+# SPOTIFY_CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')
+
+SPOTIFY_CLIENT_ID = st.secrets['SPOTIFY_CLIENT_ID']
+SPOTIFY_CLIENT_SECRET = st.secrets['SPOTIFY_CLIENT_SECRET']
 
 st.set_page_config(page_title="Spotify Song Recommender", page_icon=":musical_note:", layout="wide")
 
