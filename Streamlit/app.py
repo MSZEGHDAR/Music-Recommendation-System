@@ -5,7 +5,7 @@ from spotipy.oauth2 import SpotifyClientCredentials
 from joblib import load
 import numpy as np
 # from dotenv import load_dotenv
-# import os
+import os
 
 # load_dotenv()
 # SPOTIFY_CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')
@@ -13,7 +13,7 @@ import numpy as np
 
 SPOTIFY_CLIENT_ID = st.secrets['SPOTIFY_CLIENT_ID']
 SPOTIFY_CLIENT_SECRET = st.secrets['SPOTIFY_CLIENT_SECRET']
-
+script_dir = os.path.dirname(os.path.abspath(__file__))
 st.set_page_config(page_title="Spotify Song Recommender", page_icon=":musical_note:", layout="wide")
 
 st.markdown("""
@@ -70,10 +70,10 @@ sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
 @st.cache_data
 def load_data():
-    data = pd.read_csv('data.csv')
-    prepared_data = load('prepared_data.joblib')
-    preprocessed_data = load('preprocessed_data.joblib')
-    nn_model = load('nn_model.joblib')
+    data = pd.read_csv(os.path.join(script_dir, 'data.csv'))
+    prepared_data = load(os.path.join(script_dir, 'prepared_data.joblib'))
+    preprocessed_data = load(os.path.join(script_dir, 'preprocessed_data.joblib'))
+    nn_model = load(os.path.join(script_dir, 'nn_model.joblib'))
     return data, prepared_data, preprocessed_data, nn_model
 
 data, prepared_data, preprocessed_data, nn_model = load_data()
