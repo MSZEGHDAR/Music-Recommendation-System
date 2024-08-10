@@ -20,3 +20,7 @@ This project implements a simple music recommendation system using machine learn
 
 1. Clone this repository
 2. Install the required packages:
+
+## Data Source
+
+[Dataset from Kaggle](https://www.kaggle.com/datasets/vatsalmavani/spotify-dataset)
