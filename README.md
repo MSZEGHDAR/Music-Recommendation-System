@@ -24,5 +24,7 @@ This project implements a simple music recommendation system using machine learn
 ## Data Source
 
 [Dataset from Kaggle](https://www.kaggle.com/datasets/vatsalmavani/spotify-dataset)
+
 ----
+
 [Test it on Streamlit](https://music-recommendation-system-8fgienvxyusq4vgka3rczu.streamlit.app/)
